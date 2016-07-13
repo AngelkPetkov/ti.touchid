@@ -91,7 +91,7 @@
 		NSLog(@"[WARN] Ti.TouchID: \"callback\" must be a function");
 		return;
 	}
-	if(![self isSupported:nil]) {
+	if(![[self isSupported:nil] boolValue]) {
 		TiThreadPerformOnMainThread(^{
 			NSMutableDictionary *event = [NSMutableDictionary dictionary];
 			[event setValue:@"This API is only available in iOS 8 and above" forKey:@"error"];
